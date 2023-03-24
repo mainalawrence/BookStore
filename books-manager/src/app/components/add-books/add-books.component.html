@@ -1,0 +1,42 @@
+<div class="flex justify-center">
+	<form  [formGroup]="this.addBookForm" (ngSubmit)="onSubmit($event)" class="w-[400px] border-2 shadow p-5 my-6">
+		<h2 class="my-6 text-2xl text-center font-bold">Add a Book</h2>
+		<div class="">
+			<label class="block">Name</label>
+			<input formControlName="name" value={{this.getName()?.value}} name="name" type="text" class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+			<div *ngIf="this.getName()?.valid && this.getName()?.touched"
+			class="bg-red rounded-lg">
+			Name  is required
+		   </div>
+		</div>
+
+		<div class="my-4">
+			<label class="block">Pages</label>
+			<input formControlName="pages" value={{this.getPages()?.value}} name="pages" type="number" class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+			<div *ngIf="this.getPages()?.valid && this.getPages()?.touched"
+			class="bg-red rounded-lg ">
+			Pages  is required
+		   </div>
+		</div>
+
+		<div class="">
+			<label class="block">Author</label>
+			<input formControlName="author" value={{this.getAuthor()?.value}} name="author" type="text" class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+			<div *ngIf="this.getAuthor()?.invalid&&this.getAuthor()?.touched"
+			class="bg-red rounded-lg">
+			Author  is required
+		   </div>
+		</div>
+		<div class="">
+			<label class="block">Image</label>
+			<input formControlName="author"value={{this.getImage()?.value}}
+			 name="author" type="input"  
+			 class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+			<div *ngIf="this.getImage()?.invalid && this.getImage()?.touched"
+			class="bg-red rounded-lg">
+			File   is required
+		   </div>
+		</div>
+		 <button class="bg-slate-900 px-8 rounded-md py-1  text-white w-full mt-10">Register</button>
+	</form>
+</div>

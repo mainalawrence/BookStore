@@ -1,0 +1,17 @@
+<div class="flex justify-center">
+	<form action="" class="w-[400px] border-2 shadow p-5 my-6">
+		<h2 class="my-6 text-2xl text-center font-bold">Login</h2>
+		<div class="">
+			<label class="block">Email</label>
+			<input type="email" [(ngModel)]="loginDetails.email" name="email" class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+		</div>
+
+		<div class="mt-4">
+			<label class="block">Password</label>
+			<input type="password" [(ngModel)]="loginDetails.password" name="password" class="w-full border-2 px-2 py-1 rounded-sm mt-2">
+		</div>
+
+		 <button (click)="loginUser()" class="bg-slate-900 px-8 rounded-md py-1  text-white w-full mt-10">Login</button>
+		 <a routerLink="/register" class="mt-2 block">Register</a>
+	</form>
+</div>
